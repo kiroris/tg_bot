@@ -57,7 +57,7 @@ def information() -> InlineKeyboardBuilder:
     builder.row(
         InlineKeyboardButton(
             text='🔙 Назад',
-            callback_data='go_to_main_menu'
+            callback_data='back_to_main_menu'
             )
         )
     return builder.as_markup()

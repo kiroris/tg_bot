@@ -1,5 +1,5 @@
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
-from aiogram.types import KeyboardButton
+#from aiogram.types import KeyboardButton
 
 def menu() -> ReplyKeyboardBuilder:
     kb = ReplyKeyboardBuilder()
