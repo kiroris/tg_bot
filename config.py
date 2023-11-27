@@ -3,8 +3,10 @@ from dataclasses import dataclass
 @dataclass
 class Config():
     token: str = '6109467672:AAHy9tEp1ARe286x4XVanrDMkB72fAehlSA'
+    #token: str = '6656880656:AAHiS2ytD3mZ_DMkR_bAU_MSXW0Ue5-XNlg'
     id_channel: str = '-1002134152881'
     link_channel: str = 'https://t.me/kiroris'
+    OpenWeatherToken: str = 'd4417195d9d4a62894f298da0547a30a'
     text_main_menu:str = """
     📨 Главное меню
     """
@@ -48,6 +50,7 @@ class Config():
 
 
 
+    wet_key: str = '7beac4d686154c6f55e3c6fd82080232'
 
 
 

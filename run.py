@@ -16,9 +16,10 @@ async def main():
     dp.include_routers(info.router)
     dp.include_routers(back_to_main_menu.router)
     dp.include_routers(support.router)
-    #dp.include_routers(back_to_information.router)
     dp.include_routers(rules.router)
-    #dp.include_routers(delete_of_rules.router)
+
+    #from modules import check_weather
+    #dp.include_routers(check_weather.router)
 
 
 
