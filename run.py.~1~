@@ -18,11 +18,11 @@ async def main():
     dp.include_routers(support.router)
     dp.include_routers(rules.router)
 
-    from modules import check_weather
-    dp.include_routers(check_weather.router)
+    #from modules import check_weather
+    #dp.include_routers(check_weather.router)
     
-    #from modules import check_price_crypto
-    #dp.include_routers(check_price_crypto.router)
+    from modules import check_price_crypto
+    dp.include_routers(check_price_crypto.router)
 
 
 
@@ -48,7 +48,7 @@ async def main():
     shutil.rmtree("utils/base_utils/__pycache__")
 
     shutil.rmtree("modules/__pycache__")
-    #shutil.rmtree("modules/base_modules/__pycache__")
+    shutil.rmtree("modules/base_modules/__pycache__")
 
 
 
