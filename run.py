@@ -18,8 +18,8 @@ async def main():
     dp.include_routers(support.router)
     dp.include_routers(rules.router)
 
-    from modules import check_weather
-    dp.include_routers(check_weather.router)
+    #from modules import check_weather
+    #dp.include_routers(check_weather.router)
     
     #from modules import check_price_crypto
     #dp.include_routers(check_price_crypto.router)
