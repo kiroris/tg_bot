@@ -2,7 +2,7 @@ from aiogram.types import CallbackQuery
 from config import Config
 from run import bot
 
-from keyboards.inline import subscribe
+from keyboards.base_kb.subscribe import subscribe
 
 #==========CHECK_SUBSCRIPTION(FOR_CALLBACK)==========#
 async def callback_check_subscription(callback_query: CallbackQuery):

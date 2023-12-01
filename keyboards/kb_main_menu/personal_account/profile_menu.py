@@ -3,7 +3,7 @@ from aiogram.types import InlineKeyboardButton
 from config import Config
 
 
-def personal_account() -> InlineKeyboardBuilder:
+def profile_menu() -> InlineKeyboardBuilder:
     builder = InlineKeyboardBuilder()
     builder.row(
         InlineKeyboardButton(

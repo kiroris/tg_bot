@@ -6,7 +6,7 @@ from config import Config
 from run import bot
 
 
-from keyboards.inline import back_to_information
+from keyboards.kb_main_menu.support_section.back_to_information import back_to_information
 
 
 router = Router()

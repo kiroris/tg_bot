@@ -5,7 +5,7 @@ from aiogram import Router, F
 from config import Config
 from run import bot
 
-from keyboards.inline import delete
+from keyboards.base_kb.delete import delete
 
 router = Router()
 

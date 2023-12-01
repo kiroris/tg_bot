@@ -5,7 +5,7 @@ from aiogram import F, Router
 from config import Config
 from run import bot
 
-from keyboards.inline import main_menu
+from keyboards.kb_main_menu.main_menu import main_menu
 
 router = Router()
 

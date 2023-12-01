@@ -3,7 +3,7 @@ from aiogram.types import Message, URLInputFile
 from aiogram import F, Router
 from config import Config
 
-from keyboards.inline import main_menu
+from keyboards.kb_main_menu.main_menu import main_menu
 
 router = Router()
 

@@ -54,40 +54,81 @@ async def main():
         await bot.session.close()
 
 
-    # delete cache
+
+
+
+
+    # DELETE OF CACHE
     import shutil
-    shutil.rmtree("__pycache__")
+    cleanup_directories = [
+        "__pycache__",
+        # handlers
+        "handlers/__pycache__",
+        "handlers/users/__pycache__",
+        "handlers/users/main_menu_dir/__pycache__",
+        "handlers/users/main_menu_dir/personal_account/__pycache__",
+        "handlers/users/main_menu_dir/support_section/__pycache__",
 
+        # keyboards
+        "keyboards/__pycache__",
+        "keyboards/base_kb/__pycache__",
+        "keyboards/kb_main_menu/__pycache__",
+        "keyboards/kb_main_menu/personal_account/__pycache__",
+        "keyboards/kb_main_menu/support_section/__pycache__",
 
-    # HANDLESRS
-    shutil.rmtree("handlers/__pycache__")
-    # users
-    shutil.rmtree("handlers/users/__pycache__")
-    # main_menu_dir
-    shutil.rmtree("handlers/users/main_menu_dir/__pycache__")
-    # personal_account
-    shutil.rmtree("handlers/users/main_menu_dir/personal_account/__pycache__")
-    # support_section
-    shutil.rmtree("handlers/users/main_menu_dir/support_section/__pycache__")
+        # utils
+        "utils/__pycache__",
+        "utils/base_utils/__pycache__",
 
+        # modules
+        "modules/__pycache__",
+        "modules/base_modules/__pycache__",
+    ]
 
-
-    # KEYBOARDS
-
-
+    for directory in cleanup_directories:
+        try:
+            shutil.rmtree(directory)
+        except FileNotFoundError:
+            pass
 
     
-
-    # UTILS
-    shutil.rmtree("utils/__pycache__")
-    # base utils
-    shutil.rmtree("utils/base_utils/__pycache__")
+    
+    #shutil.rmtree("__pycache__")
 
 
-    # MODULES
-    #shutil.rmtree("modules/__pycache__")
-    # base modules
-    #shutil.rmtree("modules/base_modules/__pycache__")
+    ## HANDLESRS
+    #shutil.rmtree("handlers/__pycache__")
+    ## users
+    #shutil.rmtree("handlers/users/__pycache__")
+    ## main_menu_dir
+    #shutil.rmtree("handlers/users/main_menu_dir/__pycache__")
+    ## personal_account
+    #shutil.rmtree("handlers/users/main_menu_dir/personal_account/__pycache__")
+    ## support_section
+    #shutil.rmtree("handlers/users/main_menu_dir/support_section/__pycache__")
+
+
+
+    ## KEYBOARDS
+    ##shutil.rmtree("/keyboards/__pycache__")
+    #shutil.rmtree("/keyboards/base_kb/__pycache__")
+    #shutil.rmtree("/keyboards/kb_main_menu/__pycache__")
+    ##shutil.rmtree("/keyboards/kb_main_menu/personal_account/__pycache__")
+    ##shutil.rmtree("/keyboards/kb_main_menu/support_section/__pycache__")
+
+
+    #
+
+    ## UTILS
+    #shutil.rmtree("utils/__pycache__")
+    ## base utils
+    #shutil.rmtree("utils/base_utils/__pycache__")
+
+
+    ## MODULES
+    ##shutil.rmtree("modules/__pycache__")
+    ## base modules
+    ##shutil.rmtree("modules/base_modules/__pycache__")
 
 
 if __name__ == "__main__":

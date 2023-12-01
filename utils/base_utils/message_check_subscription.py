@@ -2,7 +2,7 @@ from aiogram.types import Message
 from config import Config
 from run import bot
 
-from keyboards.inline import subscribe
+from keyboards.base_kb.subscribe import subscribe
 
 #==========CHECK_SUBSCRIPTION(FOR_MESSAGE/COMMAND)==========#
 async def message_check_subscription(message: Message):

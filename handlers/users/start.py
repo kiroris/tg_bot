@@ -4,7 +4,7 @@ from aiogram import Router
 
 from utils.base_utils.message_check_subscription import message_check_subscription
 
-from keyboards.default import menu
+from keyboards.menu import menu
 #from keyboards.inline import subscribe, main_menu, information, back_to_information, delete
 
 
