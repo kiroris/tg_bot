@@ -18,8 +18,8 @@ def subscribe() -> InlineKeyboardBuilder:
 def main_menu() -> InlineKeyboardBuilder:
     builder = InlineKeyboardBuilder()
     builder.row(InlineKeyboardButton(
-        text="ACTIONS-1", 
-        callback_data="ACTIONS-1")
+        text="Профиль", 
+        callback_data="personal_account")
     )
     builder.row(InlineKeyboardButton(
         text="ACTIONS-2",

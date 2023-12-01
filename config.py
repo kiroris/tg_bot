@@ -7,6 +7,9 @@ class Config():
     id_channel: str = '-1002134152881'
     link_channel: str = 'https://t.me/kiroris'
     OpenWeatherToken: str = 'd4417195d9d4a62894f298da0547a30a'
+
+    
+
     text_main_menu:str = """
     📨 Главное меню
     """
