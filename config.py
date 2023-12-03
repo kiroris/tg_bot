@@ -2,14 +2,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Config():
-    token: str = '6109467672:AAHy9tEp1ARe286x4XVanrDMkB72fAehlSA'
-    #token: str = '6656880656:AAHiS2ytD3mZ_DMkR_bAU_MSXW0Ue5-XNlg'
-    id_channel: str = '-1002134152881'
-    link_channel: str = 'https://t.me/kiroris'
-    OpenWeatherToken: str = 'd4417195d9d4a62894f298da0547a30a'
-
-    
-
     text_main_menu:str = """
     📨 Главное меню
     """
@@ -17,7 +9,6 @@ class Config():
     information_text: str = """
     🏖 Информация
     """
-
 
     rules: str = """
     Пользовательское соглашение
@@ -41,24 +32,6 @@ class Config():
 8. Использование ошибок или брешей в системе безопасности запрещено и квалифицируется по УК РФ ст.273
     """
 
-
-
-
-
-    support_live: str = "https://t.me/lsadjfhaklsfghjsdkjfh"
     support_text: str = """
     💬По вопросам работы бота или сотрудничества писать сюда
     """
-
-
-
-
-    wet_key: str = '7beac4d686154c6f55e3c6fd82080232'
-
-
-
-
-
-
-    #pay_token: str = '1744374395:TEST:49250c77297318ee029b'
-    #admin_ids: int = 1

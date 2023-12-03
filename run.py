@@ -1,8 +1,9 @@
 from aiogram import Bot, Dispatcher
-from config import Config
+from dotenv import dotenv_values
 import asyncio
 
-bot = Bot(token=Config.token)
+config = dotenv_values()
+bot = Bot(config['TOKEN_BOT'])
 dp = Dispatcher()
 
 async def main():

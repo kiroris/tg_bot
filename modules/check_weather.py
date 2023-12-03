@@ -1,6 +1,6 @@
 import requests
 import datetime
-from config import Config
+from dotenv import dotenv_values
 from aiogram import Router
 from aiogram.filters import Command
 from aiogram.types import Message
@@ -18,7 +18,7 @@ async def get_weather(api_key, city, message):
         "Mist": "Туман \U0001F32B",
     }
 
-    base_url = "http://api.openweathermap.org/data/2.5/weather"
+    OPENWEATHER_API_URL = config['OPENWEATHER_API_URL']
     params = {
         'q': city,
         'appid': api_key,
@@ -27,7 +27,7 @@ async def get_weather(api_key, city, message):
     }
 
     try:
-        response = requests.get(base_url, params=params)
+        response = requests.get(OPENWEATHER_API_URL, params=params)
         data = response.json()
         city = data["name"]
         temperature = data["main"]["temp"]
@@ -56,12 +56,13 @@ async def get_weather(api_key, city, message):
                 f'Не удалось получить погоду для города: {city}.\nПроверьте пожалуйста название города\nСтатус код: {response.status_code} \U00002620 \U00002620 \U00002620')
         print(e)
 
+config = dotenv_values()
 router = Router()
 
 @router.message(Command("weather"))
 async def send_weather_data(message: Message, command: CommandObject):
     if command.args:
-        await get_weather(Config.OpenWeatherToken, command.args, message)  # Передаем объект сообщения в функцию
+        await get_weather(config['OPENWEATHER_TOKEN'], command.args, message)  # Передаем объект сообщения в функцию
     else:
         await message.answer("Пожалуйста укажите навазние города после команды 'weather'\nПример: /weather Москва ")
 

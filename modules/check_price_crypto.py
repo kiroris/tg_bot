@@ -2,9 +2,12 @@ import requests
 from aiogram.filters import Command
 from aiogram.types import Message
 from aiogram.filters import CommandObject
-from aiogram import Router  
+from aiogram import Router
+from dotenv import dotenv_values
 
-COINGECKO_API_URL = "https://api.coingecko.com/api/v3/simple/price"
+config = dotenv_values()
+print(config)
+COINGECKO_API_URL = config['COINGECKO_API_URL']
 router = Router()
 
 @router.message(Command("crypto"))

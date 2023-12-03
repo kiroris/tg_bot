@@ -1,6 +1,5 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types import InlineKeyboardButton
-from config import Config
 
 
 def profile_menu() -> InlineKeyboardBuilder:

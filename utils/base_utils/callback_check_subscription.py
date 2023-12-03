@@ -1,12 +1,15 @@
 from aiogram.types import CallbackQuery
-from config import Config
+#from config import Config
+from dotenv import dotenv_values
 from run import bot
 
 from keyboards.base_kb.subscribe import subscribe
 
+config = dotenv_values()
+
 #==========CHECK_SUBSCRIPTION(FOR_CALLBACK)==========#
 async def callback_check_subscription(callback_query: CallbackQuery):
-        chat_member = await bot.get_chat_member(Config.id_channel, callback_query.from_user.id)
+        chat_member = await bot.get_chat_member(config['CHANNEL_ID'], callback_query.from_user.id)
 
         if chat_member.status == "member":
             return True

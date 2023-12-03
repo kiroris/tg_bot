@@ -3,7 +3,6 @@ from utils.base_utils.callback_check_subscription import callback_check_subscrip
 from utils.base_utils.error_handler import error_handler
 from aiogram.types import CallbackQuery
 from run import bot
-#from config import Config
 
 from keyboards.kb_main_menu.personal_account.profile_menu import profile_menu
 

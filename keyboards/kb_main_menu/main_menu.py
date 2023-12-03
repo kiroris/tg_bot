@@ -1,6 +1,8 @@
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 from aiogram.types import InlineKeyboardButton
-from config import Config
+from dotenv import dotenv_values
+
+config = dotenv_values()
 
 # Main_Menu
 def main_menu() -> InlineKeyboardBuilder:
@@ -19,13 +21,13 @@ def main_menu() -> InlineKeyboardBuilder:
             callback_data='info'),
         InlineKeyboardButton(
             text='🆘 Поддержка',
-            url=Config.support_live,
+            url=config['SUPPORT_ADMIN'],
             )
         )
     builder.row(
         InlineKeyboardButton(
             text='Справка по боту',
-            url='kiroris.github.io'
+            url=config['SUPPORT_SITE']
             )
         )
     return builder.as_markup()
