@@ -86,7 +86,8 @@ async def main():
         "modules/base_modules/__pycache__",
 
         # database
-        "database/__pycache__"
+        "database/__pycache__",
+        "database/users/__pycache__",
         "database/users/start/__pycache__"
     ]
 

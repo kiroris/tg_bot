@@ -16,9 +16,13 @@ router = Router()
 async def process_callback_profile(callback_query: CallbackQuery):
     if await check_subscription(callback_query):
         try:
+
+            profile = f"""
+            Баланс: None
+            ID пользователя: {callback_query.from_user.id}"""
             await bot.edit_message_caption(chat_id=callback_query.message.chat.id,
                                            message_id=callback_query.message.message_id,
-                                           caption=Config.text_profile,
+                                           caption=profile,#Config.text_profile,
                                            reply_markup=profile_menu())
         except Exception as e:
             await error_handler(callback_query, e)

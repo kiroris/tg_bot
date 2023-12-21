@@ -6,10 +6,10 @@ class Config():
     📨 Главное меню
     """
 
-    text_profile: str = f"""
-    Баланс: None
-    ID пользователя: {callback_query.from_user.id}
-    """
+    #text_profile: str = f"""
+    #Баланс: None
+    #ID пользователя: {callback_query.from_user.id}
+    #"""
 
     information_text: str = """
     🏖 Информация
