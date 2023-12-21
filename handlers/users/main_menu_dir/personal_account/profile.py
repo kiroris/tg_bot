@@ -12,7 +12,7 @@ router = Router()
 
 
 @router.callback_query(F.data == 'profile')
-async def process_callback_personal_account(callback_query: CallbackQuery):
+async def process_callback_profile(callback_query: CallbackQuery):
     if await check_subscription(callback_query):
         try:
             account = f"""

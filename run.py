@@ -25,8 +25,8 @@ async def main():
     dp.include_routers(support.router)
     dp.include_routers(rules.router)
 
-    # Personal Account
-    from handlers.users.main_menu_dir.personal_account import personal_account
+    # Profile
+    from handlers.users.main_menu_dir.profile import profile
     dp.include_routers(personal_account.router)
 
 
