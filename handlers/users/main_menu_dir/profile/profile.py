@@ -7,7 +7,7 @@ from config import Config
 
 from keyboards.kb_main_menu.profile.profile_menu import profile_menu
 
-from database.get_profile_users import get_profile_users
+from database.users.base_operations.get_info_user import get_info_user
 
 router = Router()
 
@@ -17,7 +17,7 @@ async def process_callback_profile(callback_query: CallbackQuery):
     if await check_subscription(callback_query):
         try:
             user_id = callback_query.from_user.id
-            profile_data = await get_profile_users(user_id)
+            profile_data = await get_info_user(user_id)
             
             if profile_data:
                 user_id = profile_data['user_id']
