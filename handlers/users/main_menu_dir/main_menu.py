@@ -4,7 +4,7 @@ from aiogram import F, Router
 from config import Config
 
 from keyboards.kb_main_menu.main_menu import main_menu
-from database.base_operations.get_info_user import get_info_user
+from database.users.base_operations.get_info_user import get_info_user
 
 
 router = Router()
