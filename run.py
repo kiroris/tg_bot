@@ -25,7 +25,7 @@ async def main():
     dp.include_routers(support.router)
     dp.include_routers(rules.router)
 
-
+    from handlers.users.main_menu_dir.base_handlers import back_to_main_menu
     dp.include_routers(back_to_main_menu.router)
 
     # Profile
