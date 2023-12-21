@@ -23,8 +23,8 @@ async def main_menu_handler(message: Message):
             is_seller = profile_data['seller']
             is_admin = profile_data['admin']
 
-            seller_status = "Продавец ✅" if is_seller else "Продавец ❌"
-            #admin_status = "Админ ✅" if is_admin else "Админ ❌"
+            #seller_status = "Продавец ✅" if is_seller else "Продавец ❌"
+            admin_status = "Админ ✅" if is_admin else "Админ ❌"
 
             profile = f"""
 *Ваш ID:* `{user_id}`
