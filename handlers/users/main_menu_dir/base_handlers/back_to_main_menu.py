@@ -17,7 +17,7 @@ async def process_callback_back_to_main_menu(callback_query: CallbackQuery):
         try:
             
             user_id = callback_query.from_user.id
-            profile_data = await get_profile_users(user_id)
+            profile_data = await get_info_user(user_id)
 
             if profile_data:
                 user_id = profile_data['user_id']
