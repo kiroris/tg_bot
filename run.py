@@ -71,7 +71,7 @@ async def main():
         "handlers/users/__pycache__",
         "handlers/users/main_menu_dir/__pycache__",
         "handlers/users/main_menu_dir/profile/__pycache__",
-        "handlers/users/main_menu_dir/base_handlers/__pycache__"
+        "handlers/users/main_menu_dir/base_handlers/__pycache__",
         "handlers/users/main_menu_dir/support_section/__pycache__",
 
         # keyboards
@@ -93,7 +93,7 @@ async def main():
         "database/__pycache__",
         "database/users/__pycache__",
         "database/users/start/__pycache__",
-        "database/users/base_operation/__pycache__"
+        "database/users/base_operations/__pycache__",
     ]
 
     for directory in cleanup_directories:
