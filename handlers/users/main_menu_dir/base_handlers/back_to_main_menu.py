@@ -1,12 +1,12 @@
+from database.users.base_operations.get_info_user import get_info_user
 from utils.base_utils.subscription_check import check_subscription
 from utils.base_utils.error_handler import error_handler
+from keyboards.kb_main_menu.main_menu import main_menu
 from aiogram.types import CallbackQuery
 from aiogram import F, Router
 from config import Config
 from run import bot
 
-from keyboards.kb_main_menu.main_menu import main_menu
-from database.users.base_operations.get_info_user import get_info_user
 
 router = Router()
 
@@ -33,7 +33,6 @@ async def process_callback_back_to_main_menu(callback_query: CallbackQuery):
 *Баланс:* __{balance}__
 *{admin_status}*
 """
-
 
             await bot.edit_message_caption(chat_id=callback_query.message.chat.id,
                                            message_id=callback_query.message.message_id,

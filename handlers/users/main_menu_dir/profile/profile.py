@@ -1,16 +1,13 @@
-from aiogram import Router, F
+from database.users.base_operations.get_info_user import get_info_user
+from keyboards.kb_main_menu.profile.profile_menu import profile_menu
 from utils.base_utils.subscription_check import check_subscription
 from utils.base_utils.error_handler import error_handler
 from aiogram.types import CallbackQuery
-from run import bot
+from aiogram import Router, F
 from config import Config
-
-from keyboards.kb_main_menu.profile.profile_menu import profile_menu
-
-from database.users.base_operations.get_info_user import get_info_user
+from run import bot
 
 router = Router()
-
 
 @router.callback_query(F.data == 'profile')
 async def process_callback_profile(callback_query: CallbackQuery):

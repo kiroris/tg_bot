@@ -4,7 +4,6 @@ from dotenv import dotenv_values
 
 config = dotenv_values()
 
-
 # Subscribe
 def subscribe() -> InlineKeyboardBuilder:
     builder = InlineKeyboardBuilder()

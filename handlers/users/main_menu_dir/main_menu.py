@@ -1,11 +1,9 @@
+from database.users.base_operations.get_info_user import get_info_user
 from utils.base_utils.subscription_check import check_subscription
+from keyboards.kb_main_menu.main_menu import main_menu
 from aiogram.types import Message, URLInputFile
 from aiogram import F, Router
 from config import Config
-
-from keyboards.kb_main_menu.main_menu import main_menu
-from database.users.base_operations.get_info_user import get_info_user
-
 
 router = Router()
 

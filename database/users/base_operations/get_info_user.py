@@ -1,5 +1,5 @@
-import aiopg
 from dotenv import dotenv_values
+import aiopg
 
 async def get_info_user(user_id):
     config = dotenv_values()

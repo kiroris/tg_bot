@@ -1,15 +1,10 @@
-from aiogram.filters import Command
-from aiogram.types import Message
-from aiogram import Router
-
-#from utils.base_utils.message_check_subscription import message_check_subscription
 from utils.base_utils.subscription_check import check_subscription
-
-from keyboards.menu import menu
-#from keyboards.inline import subscribe, main_menu, information, back_to_information, delete
-
 from database.users.start.check_user_in_db import check_user_in_db
 from database.users.start.add_user_to_db import add_user_to_db
+from aiogram.filters import Command
+from aiogram.types import Message
+from keyboards.menu import menu
+from aiogram import Router
 
 router = Router()
 
