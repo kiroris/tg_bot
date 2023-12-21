@@ -15,7 +15,7 @@ async def main_menu_handler(message: Message):
 
         image_from_url = URLInputFile("https://i.pinimg.com/564x/27/88/4f/27884f9a12aeffbd3d394a2097f5ad4d.jpg")
         user_id = message.from_user.id
-        profile_data = await get_profile_users(user_id)
+        profile_data = await get_info_user(user_id)
 
         if profile_data:
             user_id = profile_data['user_id']
