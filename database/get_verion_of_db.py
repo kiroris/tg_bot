@@ -19,19 +19,6 @@ try:
         )
         print(f"Server vesion: {cursor.fetchone()}")
 
-
-    with connection.cursor() as cursor:
-        cursor.execute(
-            """
-            SELECT * FROM users;
-
-            """
-        )
-
-        #connection.commit()
-        print(f"[INFO] {cursor.fetchone()}")
-
-
 except Exception as _ex:
     print("[INFO] Error while working with PostgreSQL", _ex)
 finally:

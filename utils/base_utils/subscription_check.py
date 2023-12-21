@@ -28,7 +28,7 @@ async def message_check_subscription(message: Message):
     elif chat_member.status == "administrator" or chat_member.status == "creator":
         return True
     else:
-        await bot.send_message(message.chat.id, "Привет, подпишись на канал, чтобы использовать бота", reply_markup=subscribe())
+        await bot.send_message(message.chat.id, "Подпишись на канал, чтобы использовать бота", reply_markup=subscribe())
         return False
 
 #==========CHECK_SUBSCRIPTION(FOR_CALLBACK)==========#
@@ -40,6 +40,6 @@ async def callback_check_subscription(callback_query: CallbackQuery):
         return True
     else:
         await bot.answer_callback_query(callback_query.id, "Чтобы использовать на этого бота нужно быть подписаным на канал", show_alert=True)
-        await bot.send_message(callback_query.message.chat.id, "Привет, подпишись на канал, чтобы использовать этого бота", reply_markup=subscribe())
+        await bot.send_message(callback_query.message.chat.id, "Подпишись на канал, чтобы использовать бота", reply_markup=subscribe())
         return False
 

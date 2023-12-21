@@ -8,8 +8,8 @@ from utils.base_utils.subscription_check import check_subscription
 from keyboards.menu import menu
 #from keyboards.inline import subscribe, main_menu, information, back_to_information, delete
 
-from database.check_user_in_db import check_user_in_db
-from database.add_user_to_db import add_user_to_db
+from database.users.start.check_user_in_db import check_user_in_db
+from database.users.start.add_user_to_db import add_user_to_db
 
 router = Router()
 
