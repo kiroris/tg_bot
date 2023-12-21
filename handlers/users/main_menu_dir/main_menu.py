@@ -4,7 +4,7 @@ from aiogram import F, Router
 from config import Config
 
 from keyboards.kb_main_menu.main_menu import main_menu
-from database.get_profile_users import get_profile_users
+from database.base_operations.get_info_user import get_info_user
 
 
 router = Router()
@@ -24,7 +24,7 @@ async def main_menu_handler(message: Message):
             is_admin = profile_data['admin']
 
             seller_status = "Продавец ✅" if is_seller else "Продавец ❌"
-            admin_status = "Админ ✅" if is_admin else "Админ ❌"
+            #admin_status = "Админ ✅" if is_admin else "Админ ❌"
 
             profile = f"""
 *Ваш ID:* `{user_id}`
@@ -32,4 +32,4 @@ async def main_menu_handler(message: Message):
 *{admin_status}*
 """
 
-        await message.answer_photo(image_from_url ,caption=profile,parse_mode="Markdown", reply_markup=main_menu())
+        await message.answer_photo(image_from_url,caption=profile,parse_mode="Markdown", reply_markup=main_menu())

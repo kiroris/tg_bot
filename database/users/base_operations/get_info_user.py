@@ -1,7 +1,7 @@
 import aiopg
 from dotenv import dotenv_values
 
-async def get_profile_users(user_id):
+async def get_info_user(user_id):
     config = dotenv_values()
 
     try:
@@ -34,4 +34,3 @@ async def get_profile_users(user_id):
     except Exception as ex:
         print("Ошибка при работе с PostgreSQL", ex)
         return None
-

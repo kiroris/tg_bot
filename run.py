@@ -21,9 +21,12 @@ async def main():
     # Support Section
     from handlers.users.main_menu_dir.support_section import info, back_to_main_menu, support, rules
     dp.include_routers(info.router)
-    dp.include_routers(back_to_main_menu.router)
+
     dp.include_routers(support.router)
     dp.include_routers(rules.router)
+
+
+    dp.include_routers(back_to_main_menu.router)
 
     # Profile
     from handlers.users.main_menu_dir.profile import profile
@@ -68,6 +71,7 @@ async def main():
         "handlers/users/__pycache__",
         "handlers/users/main_menu_dir/__pycache__",
         "handlers/users/main_menu_dir/profile/__pycache__",
+        "handlers/users/main_menu_dir/base_handlers/__pycache__"
         "handlers/users/main_menu_dir/support_section/__pycache__",
 
         # keyboards
@@ -88,7 +92,8 @@ async def main():
         # database
         "database/__pycache__",
         "database/users/__pycache__",
-        "database/users/start/__pycache__"
+        "database/users/start/__pycache__",
+        "database/users/base_operation/__pycache__"
     ]
 
     for directory in cleanup_directories:
