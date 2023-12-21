@@ -27,7 +27,7 @@ async def main():
 
     # Profile
     from handlers.users.main_menu_dir.profile import profile
-    dp.include_routers(personal_account.router)
+    dp.include_routers(profile.router)
 
 
 
@@ -67,14 +67,14 @@ async def main():
         "handlers/__pycache__",
         "handlers/users/__pycache__",
         "handlers/users/main_menu_dir/__pycache__",
-        "handlers/users/main_menu_dir/personal_account/__pycache__",
+        "handlers/users/main_menu_dir/profile/__pycache__",
         "handlers/users/main_menu_dir/support_section/__pycache__",
 
         # keyboards
         "keyboards/__pycache__",
         "keyboards/base_kb/__pycache__",
         "keyboards/kb_main_menu/__pycache__",
-        "keyboards/kb_main_menu/personal_account/__pycache__",
+        "keyboards/kb_main_menu/profile/__pycache__",
         "keyboards/kb_main_menu/support_section/__pycache__",
 
         # utils
