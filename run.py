@@ -19,7 +19,7 @@ async def main():
     dp.include_routers(main_menu.router)
 
     # Support Section
-    from handlers.users.main_menu_dir.support_section import info, back_to_main_menu, support, rules
+    from handlers.users.main_menu_dir.support_section import info, support, rules
     dp.include_routers(info.router)
 
     dp.include_routers(support.router)
