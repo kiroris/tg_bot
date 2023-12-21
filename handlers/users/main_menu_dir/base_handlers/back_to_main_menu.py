@@ -16,7 +16,7 @@ async def process_callback_back_to_main_menu(callback_query: CallbackQuery):
     if await check_subscription(callback_query):
         try:
             
-            user_id = message.from_user.id
+            user_id = callback_query.from_user.id
             profile_data = await get_profile_users(user_id)
 
             if profile_data:
