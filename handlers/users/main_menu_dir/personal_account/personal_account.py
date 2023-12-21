@@ -4,14 +4,14 @@ from utils.base_utils.error_handler import error_handler
 from aiogram.types import CallbackQuery
 from run import bot
 
-from keyboards.kb_main_menu.personal_account.profile_menu import profile_menu
+from keyboards.kb_main_menu.profile.profile_menu import profile_menu
 
 
 
 router = Router()
 
 
-@router.callback_query(F.data == 'personal_account')
+@router.callback_query(F.data == 'profile')
 async def process_callback_personal_account(callback_query: CallbackQuery):
     if await check_subscription(callback_query):
         try:

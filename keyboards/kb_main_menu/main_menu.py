@@ -9,7 +9,7 @@ def main_menu() -> InlineKeyboardBuilder:
     builder = InlineKeyboardBuilder()
     builder.row(InlineKeyboardButton(
         text="Профиль", 
-        callback_data="personal_account")
+        callback_data="profile")
     )
     builder.row(InlineKeyboardButton(
         text="ACTIONS-2",

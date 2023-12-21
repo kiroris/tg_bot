@@ -84,6 +84,9 @@ async def main():
         # modules
         "modules/__pycache__",
         "modules/base_modules/__pycache__",
+
+        # database
+        "database/__pycache__"
     ]
 
     for directory in cleanup_directories:
