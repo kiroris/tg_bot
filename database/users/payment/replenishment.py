@@ -1,7 +1,8 @@
+import asyncio
 from dotenv import dotenv_values
 import aiopg
 
-async def increase_balance(user_id, amount):
+async def replenishment(user_id, amount):
     config = dotenv_values()
 
     try:
@@ -13,22 +14,9 @@ async def increase_balance(user_id, amount):
         ) as connection:
 
             async with connection.cursor() as cursor:
-
-
                 await cursor.execute("UPDATE users SET balance = balance + %s WHERE user_id = %s", (amount, user_id))
-
                 return True
-
-
-
-
-                #else:
-                #    print(f"[INFO] User with ID {user_id} not found.")
-                #    return None
 
     except Exception as ex:
         print("[INFO] Error when working with PostgreSQL:", ex)
-        return None
-
-
-
+        return False

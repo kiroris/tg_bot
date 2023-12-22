@@ -93,6 +93,7 @@ async def main():
         "database/__pycache__",
         "database/users/__pycache__",
         "database/users/start/__pycache__",
+        "database/users/payment/__pycache__",
         "database/users/base_operations/__pycache__",
     ]
 
