@@ -1,8 +1,8 @@
-import asyncio
 from dotenv import dotenv_values
+import asyncio
 import aiopg
 
-async def replenishment(user_id, amount):
+async def replenishment_balance(user_id, amount):
     config = dotenv_values()
 
     try:

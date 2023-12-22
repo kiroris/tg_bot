@@ -1,7 +1,8 @@
 from dotenv import dotenv_values
+import asyncio
 import aiopg
 
-async def get_info_user(user_id):
+async def debiting_balance(user_id, amount):
     config = dotenv_values()
 
     try:
@@ -13,37 +14,9 @@ async def get_info_user(user_id):
         ) as connection:
 
             async with connection.cursor() as cursor:
-                await cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
-                result = await cursor.fetchone()
-
-                if result:
-                    user_profile = {
-                        'user_id': result[0],
-                        'balance': result[1],
-                        'seller': result[2],
-                        'admin': result[3]
-                    }
-
-                    admin_status = "Админ ✅" if user_profile['admin'] else "Админ ❌"
-                    profile_text = f"""
-*Ваш ID:* `{user_profile['user_id']}`
-*Баланс:* __{user_profile['balance']}__
-*{admin_status}*
-"""
-                    return profile_text
-
-                else:
-                    print(f"[INFO] Failed to get user profile with ID: {user_id}")
-                    return None
-
-
-
-                
-                else:
-                    print(f"Не удалось получить профиль пользователя с ID {user_id}")
-                    return None
+                await cursor.execute("UPDATE users SET balance = balance - %s WHERE user_id = %s", (amount, user_id))
+                return True
 
     except Exception as ex:
         print("[INFO] Error when working with PostgreSQL:", ex)
-        return None
-
+        return False
