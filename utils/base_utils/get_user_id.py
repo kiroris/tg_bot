@@ -23,4 +23,5 @@ async def message_get_id(message: Message):
 async def callback_get_id(callback_query: CallbackQuery):
     # Ваш код проверки подписки для коллбэка
     # Возвращаем id или другой результат
-    return callback.from_user.id
+    return callback_query.from_user.id  # Исправление: заменить callback на callback_query
+
