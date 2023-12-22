@@ -16,7 +16,7 @@ async def cmd_start(message: Message):
         
         user_id = message.from_user.id
 
-        asd = get_user_id(message)
+        asd = await get_user_id(message)
 
         if await check_user_in_db(user_id):
             await message.answer("Привет! Ты подписан на канал и ты уже есть в БД. Это твой бот.", reply_markup=menu())
