@@ -15,12 +15,12 @@ async def check_subscription(data):
         # Обработка других типов данных, если необходимо
         return False
 
-async def message_check_subscription(message):
+async def message_check_subscription(message: Message):
     # Ваш код проверки подписки для сообщения
     # Возвращаем id или другой результат
     return message.from_user.id
 
-async def callback_check_subscription(callback):
+async def callback_check_subscription(callback_query: CallbackQuery):
     # Ваш код проверки подписки для коллбэка
     # Возвращаем id или другой результат
     return callback.from_user.id
