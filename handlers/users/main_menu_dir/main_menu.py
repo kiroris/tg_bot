@@ -13,6 +13,6 @@ async def main_menu_handler(message: Message):
 
         image_from_url = URLInputFile("https://i.pinimg.com/564x/27/88/4f/27884f9a12aeffbd3d394a2097f5ad4d.jpg")
         user_id = message.from_user.id
-        profile = await get_user_profile(user_id)
+        profile = await get_info_user(user_id)
 
         await message.answer_photo(image_from_url,caption=profile,parse_mode="Markdown", reply_markup=main_menu())
