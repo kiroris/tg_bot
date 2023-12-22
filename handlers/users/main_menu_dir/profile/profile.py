@@ -14,22 +14,8 @@ async def process_callback_profile(callback_query: CallbackQuery):
     if await check_subscription(callback_query):
         try:
             user_id = callback_query.from_user.id
-            profile_data = await get_info_user(user_id)
-            
-            if profile_data:
-                user_id = profile_data['user_id']
-                balance = profile_data['balance']
-                is_seller = profile_data['seller']
-                is_admin = profile_data['admin']
+            profile = await get_info_user(user_id)
 
-                seller_status = "Продавец ✅" if is_seller else "Продавец ❌"
-                admin_status = "Админ ✅" if is_admin else "Админ ❌"
-
-                profile = f"""
-*Ваш ID:* `{user_id}`
-*Баланс:* __{balance}__
-*{admin_status}*
-"""
             await bot.edit_message_caption(chat_id=callback_query.message.chat.id,
                                            message_id=callback_query.message.message_id,
                                            caption=profile,#Config.text_profile,

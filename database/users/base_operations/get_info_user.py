@@ -1,11 +1,10 @@
 from dotenv import dotenv_values
 import aiopg
 
-async def get_info_user(user_id):
+async def get_user_profile(user_id):
     config = dotenv_values()
 
     try:
-        # Подключение к базе данных
         async with aiopg.connect(
                 host=config['HOST'],
                 user=config['USER'],
@@ -14,11 +13,9 @@ async def get_info_user(user_id):
         ) as connection:
 
             async with connection.cursor() as cursor:
-                # Получение профиля добавленного пользователя
                 await cursor.execute("SELECT * FROM users WHERE user_id = %s", (user_id,))
                 result = await cursor.fetchone()
 
-                # Проверка, найден ли пользователь с заданным ID.
                 if result:
                     user_profile = {
                         'user_id': result[0],
@@ -26,7 +23,15 @@ async def get_info_user(user_id):
                         'seller': result[2],
                         'admin': result[3]
                     }
-                    return user_profile
+
+                    admin_status = "Админ ✅" if user_profile['admin'] else "Админ ❌"
+                    profile_text = f"""
+*Ваш ID:* `{user_profile['user_id']}`
+*Баланс:* __{user_profile['balance']}__
+*{admin_status}*
+"""
+                    return profile_text
+
                 else:
                     print(f"Не удалось получить профиль пользователя с ID {user_id}")
                     return None
@@ -34,3 +39,4 @@ async def get_info_user(user_id):
     except Exception as ex:
         print("Ошибка при работе с PostgreSQL", ex)
         return None
+
