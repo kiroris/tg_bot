@@ -1,11 +1,10 @@
 from dotenv import dotenv_values
 import aiopg
 
-async def check_user_in_db(user_id):
+async def increase_balance(user_id, amount):
     config = dotenv_values()
 
     try:
-        # Подключение к базе данных
         async with aiopg.connect(
                 host=config['HOST'],
                 user=config['USER'],
@@ -14,13 +13,22 @@ async def check_user_in_db(user_id):
         ) as connection:
 
             async with connection.cursor() as cursor:
-                # Проверка наличия пользователя в базе данных
-                await cursor.execute("SELECT EXISTS(SELECT 1 FROM users WHERE user_id = %s)", (user_id,))
-                user_exists = await cursor.fetchone()
-                
-                return user_exists[0]  
+
+
+                await cursor.execute("UPDATE users SET balance = balance + %s WHERE user_id = %s", (amount, user_id))
+
+                return True
+
+
+
+
+                #else:
+                #    print(f"[INFO] User with ID {user_id} not found.")
+                #    return None
 
     except Exception as ex:
         print("[INFO] Error when working with PostgreSQL:", ex)
-        return False
+        return None
+
+
 

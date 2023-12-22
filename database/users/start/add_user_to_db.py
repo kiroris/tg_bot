@@ -17,7 +17,7 @@ async def add_user_to_db(user_id):
                 # Добавление нового пользователя
                 await cursor.execute("INSERT INTO users (user_id, balance, seller, admin) VALUES (%s, %s, %s, %s)",
                                    (user_id, 0.0, False, False))
-                print("Пользователь добавлен в базу данных")
+                print(f"[INFO] User with ID: {user_id} has been added to the database")
 
     except Exception as ex:
-        print("Ошибка при работе с PostgreSQL", ex)
+        print("[INFO] Error when working with PostgreSQL:", ex)

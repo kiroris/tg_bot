@@ -36,6 +36,13 @@ async def get_info_user(user_id):
                     print(f"[INFO] Failed to get user profile with ID: {user_id}")
                     return None
 
+
+
+                
+                else:
+                    print(f"Не удалось получить профиль пользователя с ID {user_id}")
+                    return None
+
     except Exception as ex:
         print("[INFO] Error when working with PostgreSQL:", ex)
         return None
