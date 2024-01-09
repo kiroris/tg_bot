@@ -17,7 +17,9 @@ async def cmd_start(message: Message):
     if await check_subscription(message):
         
         user_id = message.from_user.id
-
+        
+        from database.testing.test import update
+        await update()
         #await replenishment_balance(user_id,100)
         #await debiting_balance(user_id, 100)
 
