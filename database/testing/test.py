@@ -1,7 +1,7 @@
-from smsactivate.api import SMSActivateAPI
+import asyncio
 from dotenv import dotenv_values
 import aiopg
-import asyncio
+from smsactivate.api import SMSActivateAPI
 
 async def update():
     config = dotenv_values()
@@ -24,17 +24,11 @@ async def update():
             # Вставка данных о странах в таблицу Countries
             for country_id, country_info in countries.items():
                 try:
-                    country_name = country_info['eng']  # Используйте подходящий ключ для названия страны
+                    api_country_id = int(country_id)
+                    country_name = country_info['eng']
                     await cursor.execute('''
-                        INSERT INTO Countries (country_name) VALUES (%s)
-                        ON CONFLICT (country_name) DO NOTHING
-                    ''', (country_name,))
+                        INSERT INTO Countries (api_country_id, country_name) VALUES (%s, %s)
+                        ON CONFLICT (api_country_id) DO NOTHING
+                    ''', (api_country_id, country_name))
                 except KeyError as e:
                     print(f"KeyError: {e}")
-
-            # Подтверждение изменений
-            await connection.commit()
-
-
-
-

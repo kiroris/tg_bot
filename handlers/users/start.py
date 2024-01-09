@@ -1,7 +1,6 @@
 from utils.base_utils.subscription_check import check_subscription
 from database.users.start.check_user_in_db import check_user_in_db
 from database.users.start.add_user_to_db import add_user_to_db
-from utils.base_utils.get_user_id import get_user_id
 from aiogram.filters import Command
 from aiogram.types import Message
 from keyboards.menu import menu
@@ -17,9 +16,7 @@ async def cmd_start(message: Message):
     if await check_subscription(message):
         
         user_id = message.from_user.id
-        
-        from database.testing.test import update
-        await update()
+
         #await replenishment_balance(user_id,100)
         #await debiting_balance(user_id, 100)
 
