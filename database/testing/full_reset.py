@@ -21,14 +21,17 @@ async def update():
             sa = SMSActivateAPI(API_KEY)
             countries = sa.getCountries()
 
+            # Полная очистка таблицы перед вставкой новых данных
+            await cursor.execute('DELETE FROM countries')
+
             # Вставка данных о странах в таблицу Countries
             for country_id, country_info in countries.items():
                 try:
-                    api_country_id = int(country_id)
-                    country_name = country_info['eng']
+                    country_id = int(country_id)
+                    country_eng = country_info['eng']
+                    country_rus = country_info['rus']
                     await cursor.execute('''
-                        INSERT INTO Countries (api_country_id, country_name) VALUES (%s, %s)
-                        ON CONFLICT (api_country_id) DO NOTHING
-                    ''', (api_country_id, country_name))
+                        INSERT INTO countries (country_id, country_eng, country_rus) VALUES (%s, %s, %s)
+                        ''', (country_id, country_eng, country_rus))
                 except KeyError as e:
                     print(f"KeyError: {e}")
