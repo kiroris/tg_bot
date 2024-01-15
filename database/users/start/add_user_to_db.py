@@ -15,8 +15,8 @@ async def add_user_to_db(user_id):
 
             async with connection.cursor() as cursor:
                 # Добавление нового пользователя
-                await cursor.execute("INSERT INTO users (user_id, balance, seller, admin) VALUES (%s, %s, %s, %s)",
-                                   (user_id, 0.0, False, False))
+                await cursor.execute("INSERT INTO users (user_id, balance, admin, fk_country_id) VALUES (%s, %s, %s, %s)",
+                                   (user_id, 0.0, False, 0))
                 print(f"[INFO] User with ID: {user_id} has been added to the database")
 
     except Exception as ex:

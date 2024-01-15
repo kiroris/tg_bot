@@ -14,14 +14,11 @@ router = Router()
 @router.message(Command("start"))
 async def cmd_start(message: Message):
     if await check_subscription(message):
-        
+
         user_id = message.from_user.id
 
-        #await replenishment_balance(user_id,100)
-        #await debiting_balance(user_id, 100)
-
         if await check_user_in_db(user_id):
-            await message.answer("Привет! Ты подписан на канал и ты уже есть в БД. Это твой бот.", reply_markup=menu())
+            await message.answer("Привет, ты не впервые.", reply_markup=menu())
         else:
             await add_user_to_db(user_id)
-            await message.answer("asd", reply_markup=menu())
+            await message.answer("Привет, ты впервые", reply_markup=menu())

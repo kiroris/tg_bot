@@ -12,13 +12,25 @@ def main_menu() -> InlineKeyboardBuilder:
         callback_data="profile")
     )
     builder.row(InlineKeyboardButton(
-        text="ACTIONS-2",
-        callback_data="ACTIONS-2")
+        text="Профиль",
+        callback_data="profile")
     )
     builder.row(
         InlineKeyboardButton(
+            text="🌍 Cтраны",
+            callback_data="country"
+            ),
+        InlineKeyboardButton(
+            text="HUINYA",
+            callback_data="xd"
+            )
+    )
+    # Support Section
+    builder.row(
+        InlineKeyboardButton(
             text="🏖 Информация",
-            callback_data='info'),
+            callback_data='info'
+            ),
         InlineKeyboardButton(
             text='🆘 Поддержка',
             url=config['SUPPORT_ADMIN'],
